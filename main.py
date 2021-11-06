@@ -4,6 +4,9 @@ import numpy as np
 import networkx as nx
 import nltk
 from flask import Flask, render_template, request
+from pptx import Presentation
+
+p = Presentation()
 
 nltk.download('stopwords')
 def read_full_text(text):
@@ -72,7 +75,7 @@ def longText():
 
 @app.route('/try', methods = ['POST'])
 def process():
-  title = request.form['title']
+  title_form = request.form['title']
   presenter = request.form['presenter']
   back = request.form['back']
   intro = request.form['intro']
@@ -90,6 +93,13 @@ def process():
   result = generate_summary(res, 2)
   conclusion = generate_summary(conc, 2)
   acknowledgement = generate_summary(ack, 2)
-  return render_template('tryitout.html')
+  layout=p.slide_layouts[0]
+  slide=p.slides.add_slide(layout)
+  title=slide.shapes.title
+  subtitle=slide.placeholders[1] 
+  title.text = title_form
+  subtitle.text = presenter
+  p.save("slide1.pptx")
+  return render_template('index.html')
 
 app.run(host='0.0.0.0', port=8080)
