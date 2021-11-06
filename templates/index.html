@@ -8,6 +8,7 @@
   font-family: Inter;
   letter-spacing: -0.04em;
   color: #303031;
+  left: 5%;
 }
 #nav {
   display: flex;
@@ -57,13 +58,45 @@
   flex-grow: 0;
   margin: 0px 40px;
 }
+#aboutcontent {
+  position: static;
+  width: 608px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+
+  font-family: Bely Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 80px;
+  color: #303031;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 24px 0px;
+}
+#aboutdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  width: 608px;
+  height: 248px;
+  left: 56px;
+  top: 230px;
+}
 </style>
 <body bgcolor = "FAFAFA">
-<h1 id = "heading">PresentQuick</h1>
+<h1 id = "heading">&nbsp;&nbsp;&nbsp;&nbsp;PresentQuick</h1>
 <div id = "nav">
   <a id = "about">About</a>
   <a id = "contribute" href = "https://github.com/neeltron/PresentQuick">Contribute</a>
   <a id = "try">Try it out!</a>
+</div>
+<div id = "aboutdiv">
+<p id="aboutcontent">Create brief Presentations in a blink!</p>
 </div>
 </body>
 </html>
