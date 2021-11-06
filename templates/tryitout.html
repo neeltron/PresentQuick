@@ -298,6 +298,22 @@
   font-weight: 500;
   font-size: 16px;
 }
+#button3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 24px;
+  position: absolute;
+  width: 130px;
+  height: 44px;
+  left: 212px;
+  top: 45%;
+  background: #71A894;
+  border-radius: 8px;
+  color: white;
+  font-family: Inter;
+  font-size: 18px;
+}
 </style>
 <body bgcolor = "FAFAFA">
 <h1 id = "heading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PresentQuick</h1>
@@ -307,6 +323,7 @@
   <a id = "try">Try it out!</a>
 </div>
 <div id = "trydiv">
+<form method = "post">
 <input name = "title" id = "tf1" placeholder = "  Title"></input>
 <input name = "presenter" id = "tf2" placeholder = "  Presenter(s)"></input>
 <textarea name = "back" id = "tf3" placeholder = "  Background"></textarea>
@@ -318,6 +335,8 @@
 <textarea name = "ack" id = "tf9" placeholder = "  Acknowledgements"></textarea>
 <textarea name = "cite" id = "tf10" placeholder = "  Citations"></textarea>
 <textarea name = "end" id = "tf11" placeholder = "  Ending Note"></textarea>
+<button id = "button3">Generate</button>
+</form>
 </div>
 <img src = "static/illustration.png" id="illustration" width=950px>
 </body>
