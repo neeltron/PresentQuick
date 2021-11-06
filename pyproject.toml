@@ -7,6 +7,7 @@ authors = ["neeltron <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 Flask = "^2.0.2"
+python-pptx = "^0.6.21"
 
 [tool.poetry.dev-dependencies]
 
