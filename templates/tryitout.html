@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PresentQuick</title>
+</head>
+<style>
+@font-face {
+  font-family: aboutct;
+  src: url(static/BelyDisplay.ttf);
+}
+#heading {
+  font-family: Inter;
+  letter-spacing: -0.04em;
+  color: #303031;
+}
+#nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  width: 639px;
+  height: 22px;
+  right: 0px;
+  top: 10px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #303031;
+}
+#about {
+  position: relative;
+  left: 0px;
+  top: 90%;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 40px;
+  color: #303031;
+}
+#contribute {
+  position: relative;
+  left: 0px;
+  top: 90%;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 40px;
+  color: #303031;
+  text-decoration: none;
+}
+#try {
+  position: relative;
+  left: 0px;
+  top: 90%;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 40px;
+  color: green;
+}
+#aboutcontent {
+  position: static;
+  width: 608px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  font-family: aboutct;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 80px;
+  color: #303031;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 24px 0px;
+}
+#aboutdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  width: 608px;
+  height: 248px;
+  left: 56px;
+  top: 150px;
+}
+#aboutcontentsmol {
+  position: static;
+  width: 608px;
+  height: 64px;
+  left: calc(50% - 608px/2);
+  top: 184px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: #66645E;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 24px 0px;
+}
+#illustration {
+  position: absolute;
+  right: 0.28%;
+  top: 10.33%;
+  bottom: 28.38%;
+}
+#button1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 24px;
+  position: absolute;
+  width: 140px;
+  height: 44px;
+  left: 56px;
+  top: 562px;
+  background: #71A894;
+  border-radius: 8px;
+  color: white;
+  font-family: Inter;
+  font-size: 18px;
+}
+#button2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 24px;
+  position: absolute;
+  width: 190px;
+  height: 44px;
+  left: 212px;
+  top: 562px;
+  background: #71A894;
+  border-radius: 8px;
+  color: white;
+  font-family: Inter;
+  font-size: 18px;
+}
+#trydiv {
+  background: url('static/try.png') no-repeat;
+  background-size: 100%;
+  left: 56px;
+  top: 150px;
+  width: 600px;
+  height: 900px;
+  position: absolute;
+}
+</style>
+<body bgcolor = "FAFAFA">
+<h1 id = "heading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PresentQuick</h1>
+<div id = "nav">
+  <a id = "about">About</a>
+  <a id = "contribute" href = "https://github.com/neeltron/PresentQuick">Contribute</a>
+  <a id = "try">Try it out!</a>
+</div>
+<div id = "trydiv">
+
+</div>
+<img src = "static/illustration.png" id="illustration" width=950px>
+</body>
+</html>
