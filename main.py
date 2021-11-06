@@ -76,13 +76,20 @@ def process():
   presenter = request.form['presenter']
   back = request.form['back']
   intro = request.form['intro']
-  literature = request.form['literature']
-  method = request.form['method']
-  result = request.form['result']
+  lit = request.form['literature']
+  meth = request.form['method']
+  res = request.form['result']
   conc = request.form['conc']
   ack = request.form['ack']
   cite = request.form['cite']
   end = request.form['end']
+  background = generate_summary(back, 2)
+  introduction = generate_summary(intro, 2)
+  literature = generate_summary(lit, 2)
+  method = generate_summary(meth, 2)
+  result = generate_summary(res, 2)
+  conclusion = generate_summary(conc, 2)
+  acknowledgement = generate_summary(ack, 2)
   return render_template('tryitout.html')
 
 app.run(host='0.0.0.0', port=8080)
