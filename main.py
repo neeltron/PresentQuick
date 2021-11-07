@@ -96,27 +96,76 @@ def process():
   if a > 6:
     background = generate_summary(back, 6)
   else:
-    background = back
+    background = read_full_text(back)
+    print(background)
+    new_lst = []
+    for i in background:
+      sentence = ""
+      for j in i:
+        sentence += j + " "
+      new_lst.append(sentence)
+      
+    background = new_lst
   if b > 6:
     introduction = generate_summary(intro, 6)
   else:
-    introduction = intro
+    introduction = read_full_text(intro)
+    new_lst = []
+    for i in introduction:
+      sentence = ""
+      for j in i:
+        sentence += j + " "
+      new_lst.append(sentence)
+      
+    introduction = new_lst
   if c > 6:
     literature = generate_summary(lit, 6)
   else:
-    literature = lit
+    literature = read_full_text(lit)
+    new_lst = []
+    for i in literature:
+      sentence = ""
+      for j in i:
+        sentence += j + " "
+      new_lst.append(sentence)
+      
+    literature = new_lst
   if d > 6:
     method = generate_summary(meth, 6)
   else:
-    method = meth
+    method = read_full_text(meth)
+    new_lst = []
+    for i in method:
+      sentence = ""
+      for j in i:
+        sentence += j + " "
+      new_lst.append(sentence)
+      
+    method = new_lst
   if e > 6:
     result = generate_summary(res, 6)
   else:
-    result = res
+    result = read_full_text(res)
+    new_lst = []
+    for i in result:
+      sentence = ""
+      for j in i:
+        sentence += j + " "
+      new_lst.append(sentence)
+      
+    result = new_lst
   if f > 6:
     conclusion = generate_summary(conc, 2)
   else:
-    conclusion = conc
+    conclusion = read_full_text(conc)
+    new_lst = []
+    for i in conclusion:
+      sentence = ""
+      for j in i:
+        sentence += j + " "
+      new_lst.append(sentence)
+      
+    conclusion = new_lst
   layout = p.slide_layouts[0]
   slide = p.slides.add_slide(layout)
   title = slide.shapes.title
