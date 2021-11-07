@@ -3,7 +3,7 @@ from nltk.cluster.util import cosine_distance
 import numpy as np
 import networkx as nx
 import nltk
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from pptx import Presentation
 
 p = Presentation()
@@ -274,7 +274,7 @@ def process():
   tf = body_shape.text_frame
   tf.text = end
 
-  p.save("slide1.pptx")
-  return render_template('index.html')
+  p.save("presentation.pptx")
+  return send_file('presentation.pptx')
 
 app.run(host='0.0.0.0', port=8080)
