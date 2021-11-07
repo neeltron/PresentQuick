@@ -86,13 +86,37 @@ def process():
   ack = request.form['ack']
   cite = request.form['cite']
   end = request.form['end']
-  background = generate_summary(back, 2)
-  introduction = generate_summary(intro, 2)
-  literature = generate_summary(lit, 2)
-  method = generate_summary(meth, 2)
-  result = generate_summary(res, 2)
-  conclusion = generate_summary(conc, 2)
-  acknowledgement = generate_summary(ack, 2)
+  a = len(read_full_text(back))
+  print(a)
+  b = len(read_full_text(intro))
+  c = len(read_full_text(lit))
+  d = len(read_full_text(meth))
+  e = len(read_full_text(res))
+  f = len(read_full_text(conc))
+  if a > 6:
+    background = generate_summary(back, 6)
+  else:
+    background = back
+  if b > 6:
+    introduction = generate_summary(intro, 6)
+  else:
+    introduction = intro
+  if c > 6:
+    literature = generate_summary(lit, 6)
+  else:
+    literature = lit
+  if d > 6:
+    method = generate_summary(meth, 6)
+  else:
+    method = meth
+  if e > 6:
+    result = generate_summary(res, 6)
+  else:
+    result = res
+  if f > 6:
+    conclusion = generate_summary(conc, 2)
+  else:
+    conclusion = conc
   layout = p.slide_layouts[0]
   slide = p.slides.add_slide(layout)
   title = slide.shapes.title
@@ -199,7 +223,7 @@ def process():
   body_shape = shapes.placeholders[1]
   title_shape.text = 'Ending Note'
   tf = body_shape.text_frame
-  tf.text = ack
+  tf.text = end
 
   p.save("slide1.pptx")
   return render_template('index.html')
