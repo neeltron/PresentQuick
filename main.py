@@ -166,12 +166,19 @@ def process():
       new_lst.append(sentence)
       
     conclusion = new_lst
+
   layout = p.slide_layouts[0]
   slide = p.slides.add_slide(layout)
   title = slide.shapes.title
   subtitle = slide.placeholders[1] 
   title.text = title_form
   subtitle.text = presenter
+  left = top = 0
+  img_path = 'bg.jpg'
+  pic = slide.shapes.add_picture(img_path, left, top, width=p.slide_width, height=p.slide_height)
+  slide.shapes._spTree.remove(pic._element)
+  slide.shapes._spTree.insert(2, pic._element)
+
   layout1 = p.slide_layouts[1]
   slide = p.slides.add_slide(layout1)
   shapes = slide.shapes
@@ -184,6 +191,7 @@ def process():
     p2 = tf.add_paragraph()
     p2.text = background[i]
     p2.level = 0
+
   layout1 = p.slide_layouts[1]
   slide = p.slides.add_slide(layout1)
   shapes = slide.shapes
@@ -196,6 +204,7 @@ def process():
     p2 = tf.add_paragraph()
     p2.text = introduction[i]
     p2.level = 0
+
   layout1 = p.slide_layouts[1]
   slide = p.slides.add_slide(layout1)
   shapes = slide.shapes
@@ -208,6 +217,7 @@ def process():
     p2 = tf.add_paragraph()
     p2.text = literature[i]
     p2.level = 0
+
   layout1 = p.slide_layouts[1]
   slide = p.slides.add_slide(layout1)
   shapes = slide.shapes
