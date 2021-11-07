@@ -161,6 +161,46 @@ def process():
     p2.text = result[i]
     p2.level = 0
 
+  layout1 = p.slide_layouts[1]
+  slide = p.slides.add_slide(layout1)
+  shapes = slide.shapes
+  title_shape = shapes.title
+  body_shape = shapes.placeholders[1]
+  title_shape.text = 'Conclusion'
+  tf = body_shape.text_frame
+  tf.text = conclusion[0]
+  for i in range(1, len(conclusion)):
+    p2 = tf.add_paragraph()
+    p2.text = conclusion[i]
+    p2.level = 0
+
+  layout1 = p.slide_layouts[1]
+  slide = p.slides.add_slide(layout1)
+  shapes = slide.shapes
+  title_shape = shapes.title
+  body_shape = shapes.placeholders[1]
+  title_shape.text = 'Acknowledgements'
+  tf = body_shape.text_frame
+  tf.text = ack
+
+  layout1 = p.slide_layouts[1]
+  slide = p.slides.add_slide(layout1)
+  shapes = slide.shapes
+  title_shape = shapes.title
+  body_shape = shapes.placeholders[1]
+  title_shape.text = 'Citations'
+  tf = body_shape.text_frame
+  tf.text = cite
+
+  layout1 = p.slide_layouts[1]
+  slide = p.slides.add_slide(layout1)
+  shapes = slide.shapes
+  title_shape = shapes.title
+  body_shape = shapes.placeholders[1]
+  title_shape.text = 'Ending Note'
+  tf = body_shape.text_frame
+  tf.text = ack
+
   p.save("slide1.pptx")
   return render_template('index.html')
 
