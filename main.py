@@ -60,8 +60,8 @@ def generate_summary(text, top_n=5):
   ranked_txt = sorted(((scores[i],s) for i,s in enumerate(txt_arr)), reverse=True)   
   for i in range(top_n):
     summarize_text.append(" ".join(ranked_txt[i][1]))
-  summ =  ". ".join(summarize_text)
-  return summ
+  # summ =  ". ".join(summarize_text)
+  return summarize_text
 
 app = Flask('app', template_folder = "templates", static_folder = "static")
 
@@ -93,12 +93,24 @@ def process():
   result = generate_summary(res, 2)
   conclusion = generate_summary(conc, 2)
   acknowledgement = generate_summary(ack, 2)
-  layout=p.slide_layouts[0]
-  slide=p.slides.add_slide(layout)
-  title=slide.shapes.title
-  subtitle=slide.placeholders[1] 
+  layout = p.slide_layouts[0]
+  slide = p.slides.add_slide(layout)
+  title = slide.shapes.title
+  subtitle = slide.placeholders[1] 
   title.text = title_form
   subtitle.text = presenter
+  layout1 = p.slide_layouts[1]
+  slide = p.slides.add_slide(layout1)
+  shapes = slide.shapes
+  title_shape = shapes.title
+  body_shape = shapes.placeholders[1]
+  title_shape.text = 'Background'
+  tf = body_shape.text_frame
+  tf.text = background[0]
+  for i in range(1, len(background)):
+    p2 = tf.add_paragraph()
+    p2.text = background[i]
+    p2.level = 0
   p.save("slide1.pptx")
   return render_template('index.html')
 
