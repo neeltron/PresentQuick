@@ -147,6 +147,20 @@ def process():
     p2 = tf.add_paragraph()
     p2.text = method[i]
     p2.level = 0
+
+  layout1 = p.slide_layouts[1]
+  slide = p.slides.add_slide(layout1)
+  shapes = slide.shapes
+  title_shape = shapes.title
+  body_shape = shapes.placeholders[1]
+  title_shape.text = 'Results'
+  tf = body_shape.text_frame
+  tf.text = result[0]
+  for i in range(1, len(result)):
+    p2 = tf.add_paragraph()
+    p2.text = result[i]
+    p2.level = 0
+
   p.save("slide1.pptx")
   return render_template('index.html')
 
